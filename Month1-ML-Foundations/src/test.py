@@ -1,9 +1,13 @@
-from utils import calculate_average, greetings
+from logger import get_logger
+from config import APP_NAME, AUTHOR
 
-def func() -> None:
-    print(greetings('Sourav'))
-    data = [23.5,45,77,99.34]
-    print(f'Your average is : {calculate_average(data)}')
+logger = get_logger(__name__)
 
-if __name__ == "__main__":
-    func()
+def main() -> None:
+
+    logger.info(f'Starting the {APP_NAME}')
+    logger.info(f'Author of this app is {AUTHOR}')
+    logger.info(f'App is running smoothly.')
+
+if __name__ == '__main__':
+    main()
